@@ -11,7 +11,7 @@
         <?php wp_head(); ?>
         <!-- Fecha Header Wordpress -->
     </head>
-
+	<?php $contato = get_page_by_title('contato'); ?>
 	<body>
 		<header>
 			<nav>
@@ -21,8 +21,7 @@
 					<li><a href="/contato">Contato</a></li>
 				</ul>
 			</nav>
-
 			<h1><img src="<?php echo get_stylesheet_directory_uri()?>/img/rest.png" alt="Rest"></h1>
-			<p>Rua Marechal 29 – Copacabana – Rj</p>
-			<p class="telefone">2422-9201</p>
+			<p><?php the_field('endereco_header', $contato) ?></p>
+			<p class="telefone"><?php the_field('telefone_header', $contato) ?></p>
 		</header>
